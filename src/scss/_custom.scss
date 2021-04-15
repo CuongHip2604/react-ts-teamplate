@@ -1,0 +1,24 @@
+.custom__toastr {
+    &.Toastify__toast--success {
+        background: #4f943e;
+    }
+    &.Toastify__toast--error {
+        background: #cd392d;
+    }
+    &.Toastify__toast--info {
+        background: #2a72fd;
+    }
+    &.Toastify__toast--warning {
+        background: #f2942d;
+    }
+    .Toastify__close-button {
+        min-width: 0 !important;
+    }
+}
+
+._loading_overlay_content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
