@@ -1,7 +1,7 @@
 import React from "react";
-import { Switch, useRouteMatch } from "react-router";
+import { Switch, useRouteMatch, Redirect } from "react-router-dom";
 import RouteWithSubRoutes from "../../shared/components/RouteWitchRoutes";
-import { RouteDTO } from "../../shared/Modals/Route.modal";
+import { RouteDTO } from "../../shared/Modals/route.modal";
 
 function UserModules(props: any) {
   const { routes } = props;
@@ -19,6 +19,7 @@ function UserModules(props: any) {
       {newRoutes.map((route: RouteDTO, i: number) => (
         <RouteWithSubRoutes key={i} {...route} />
       ))}
+      <Redirect from="/users" to="/users/list" />
     </Switch>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { RouteDTO } from "../../shared/Modals/Route.modal";
+import { RouteDTO } from "../../shared/Modals/route.modal";
 
 const UserModule = React.lazy(() => import("./UserModule"));
 const UserManagement = React.lazy(() => import("./pages/UserManagement"));

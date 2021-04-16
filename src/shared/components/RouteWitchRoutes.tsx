@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router";
-import { RouteDTO } from "../Modals/Route.modal";
+import { RouteDTO } from "../Modals/route.modal";
 
 function RouteWithSubRoutes(route: RouteDTO) {
   return (

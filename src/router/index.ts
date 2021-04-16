@@ -1,27 +1,30 @@
 import React from "react";
+import { RouteDTO } from "../shared/Modals/route.modal";
 import modulesRoutes from "./modules";
 
 const Dashboard = React.lazy(() => import("../shared/pages/Dashboard"));
 
-let routes: any = [
+let routes: RouteDTO[] = [
   { path: "/", exact: true },
   {
     path: "/dashboard",
+    exact: true,
     name: "Dashboard",
     component: Dashboard,
   },
 ];
 
-function configRoutes() {
+function configRoutes(): RouteDTO[] {
   if (modulesRoutes && Object.values(modulesRoutes).length) {
-    let allRoutes = new Set();
+    let otherRoutes = new Set();
     Object.values(modulesRoutes).forEach((routes: any) => {
-      routes.forEach((route: any) => {
-        allRoutes.add(route);
+      routes.forEach((route: RouteDTO) => {
+        otherRoutes.add(route);
       });
     });
 
-    return [...Array.from(allRoutes), ...routes];
+    const allRoutes: any = Array.from(otherRoutes);
+    return [...allRoutes, ...routes];
   }
 
   return [...routes];

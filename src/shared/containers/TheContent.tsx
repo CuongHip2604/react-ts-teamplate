@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import routes from "../../router";
-import { RouteDTO } from "../Modals/Route.modal";
+import { RouteDTO } from "../Modals/route.modal";
 import RouteWithSubRoutes from "../components/RouteWitchRoutes";
 
 const loading = (
@@ -10,7 +10,7 @@ const loading = (
   </div>
 );
 
-function TheContent(props: Object) {
+function TheContent(props: any) {
   return (
     <div>
       <Suspense fallback={loading}>
@@ -21,6 +21,7 @@ function TheContent(props: Object) {
                 <Route
                   key={idx}
                   path={route.path}
+                  exact={route.exact}
                   render={(props) => (
                     <RouteWithSubRoutes key={idx} {...route} />
                   )}
